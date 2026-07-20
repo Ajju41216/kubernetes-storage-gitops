@@ -1,25 +1,25 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
   name: storage-lab
   namespace: argocd
-
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
 spec:
-    source:
-      repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
-      targetRevision: main
-      path: charts/storage-lab-chart
-      helm:
-        releaseName: storage-lab-release
+  project: default
 
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: storage-lab
+  source:
+    repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
+    targetRevision: main
+    path: charts/storage-lab-chart
+    helm:
+      releaseName: storage-lab-release
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: storage-lab
 
   syncPolicy:
     automated:
