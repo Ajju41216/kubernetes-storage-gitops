@@ -20,11 +20,11 @@ spec:
       releaseName: storage-lab-release
 
       values: |
-        replicaCount: 3
+        replicaCount: 5
 
         labels:
           environment: lab
-          version: v1
+          version: v2
 
   destination:
     server: https://kubernetes.default.svc
