@@ -8,27 +8,35 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
-spec:
-  project: default
+# spec:
+#   project: default
 
-  source:
-    repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
-    targetRevision: main
-    path: charts/storage-lab-chart
+#   source:
+#     repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
+#     targetRevision: main
+#     path: charts/storage-lab-chart
 
-    helm:
-      releaseName: storage-lab-release
+#     helm:
+#       releaseName: storage-lab-release
 
-      values: |
-        replicaCount: 5
+#       values: |
+#         replicaCount: 5
 
-        labels:
-          environment: lab
-          version: v2
+#         labels:
+#           environment: lab
+#           version: v2
 
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: storage-lab
+  spec:
+    source:
+      repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
+      targetRevision: main
+      path: charts/storage-lab-chart
+      helm:
+        releaseName: storage-lab-release
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: storage-lab
 
   syncPolicy:
     automated:
