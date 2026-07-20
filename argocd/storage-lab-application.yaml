@@ -1,3 +1,4 @@
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 
@@ -8,25 +9,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
-# spec:
-#   project: default
-
-#   source:
-#     repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
-#     targetRevision: main
-#     path: charts/storage-lab-chart
-
-#     helm:
-#       releaseName: storage-lab-release
-
-#       values: |
-#         replicaCount: 5
-
-#         labels:
-#           environment: lab
-#           version: v2
-
-  spec:
+spec:
     source:
       repoURL: https://github.com/Ajju41216/kubernetes-storage-gitops.git
       targetRevision: main
