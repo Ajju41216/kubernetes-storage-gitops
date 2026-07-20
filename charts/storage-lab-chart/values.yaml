@@ -1,4 +1,4 @@
-replicaCount: 5
+replicaCount: 3
 
 image:
   repository: nginx
@@ -9,7 +9,7 @@ labels:
   app: storage-test
   tier: frontend
   environment: lab
-  version: v2
+  version: v3
 
 service:
   type: NodePort
